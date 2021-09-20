@@ -1,0 +1,38 @@
+.container {
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+table {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border: 1px solid #bdc3c7;
+	box-shadow: 0 0 5px;
+	width: 50rem;
+	height: 12.5rem;
+	border-collapse: collapse;
+}
+th,
+td {
+	padding: 12px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+.header {
+	background-color: cadetblue;
+	color: white;
+}
+tr {
+	cursor: pointer;
+	transition: all 0.2s ease-in;
+}
+tr:hover {
+	transform: scale(1.02);
+}
+@media screen and (max-width: 700px) {
+	table {
+		width: 90%;
+		height: auto;
+	}
+}

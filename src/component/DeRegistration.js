@@ -18,7 +18,7 @@ function Delete(props) {
 					color: "white",
 					backgroundColor: "red",
 					fontWeight: 400,
-					fontSize: "0.8rem",
+					fontSize: "0.7rem",
 				}}
 				onClick={() => deleteUser(props.item.id)}>
 				Delete

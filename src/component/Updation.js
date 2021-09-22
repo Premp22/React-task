@@ -85,7 +85,7 @@ function Update(props) {
 			/>
 			<br></br>
 			<button className="upt" onClick={() => edituser(data.id)}>
-				Update
+				UpdateNow
 			</button>
 		</div>
 	);

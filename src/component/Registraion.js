@@ -99,7 +99,7 @@ function Registration() {
 				</div>
 				<div className="rsection">
 					<h2>User Details</h2>
-					<p>From Here You can Get Users Detalis</p>
+					<p>From Here You can Get the Users Detalis</p>
 					<button
 						className="btn1"
 						onClick={() => {

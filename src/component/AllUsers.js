@@ -36,7 +36,7 @@ function Users(props) {
 														color: "white",
 														backgroundColor: "green",
 														fontWeight: 400,
-														fontSize: "0.8rem",
+														fontSize: "0.6rem",
 													}}
 													className="upb">
 													update

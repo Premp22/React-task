@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useHistory } from "react-router";
 import "../style/Adduser.css";
-function Adduser() {
+function Registration() {
 	let history = useHistory();
 	const [user, setUser] = useState({
 		id: "",
@@ -11,18 +11,17 @@ function Adduser() {
 		email: "",
 		password: "",
 	});
-	let name, value;
+
 	const handleInputs = (e) => {
 		console.log(e);
-		name = e.target.name;
-		value = e.target.value;
+		let name = e.target.name;
+		let value = e.target.value;
 		setUser({ ...user, [name]: value });
-		console.log(user);
 	};
 	const postdata = async (e) => {
 		e.preventDefault();
 		const { id, firstname, lastname, email, password } = user;
-		const res = await fetch("http://localhost:5000/users", {
+		const response = await fetch("http://localhost:5000/users", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -35,7 +34,8 @@ function Adduser() {
 				password,
 			}),
 		});
-		const data = await res.json();
+
+		window.alert("succesful");
 	};
 	return (
 		<div className="ma">
@@ -113,4 +113,4 @@ function Adduser() {
 	);
 }
 
-export default Adduser;
+export default Registration;

@@ -1,0 +1,24 @@
+.ma {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border: 1px solid #bdc3c7;
+	box-shadow: 0 0 5px;
+	width: 30rem;
+}
+.upt {
+	background: cadetblue;
+
+	padding-bottom: 0.25rem;
+	color: white;
+	border-radius: 4px;
+	border: cadetblue 1px solid;
+
+	font-weight: 800;
+	font-size: 0.8em;
+}

@@ -2,7 +2,7 @@ import React from "react";
 
 function Delete(props) {
 	function deleteUser(id) {
-		fetch(`http://localhost:5000/users/${id}`, {
+		fetch(`https://api-task-rest.herokuapp.com/users/${id}`, {
 			method: "DELETE",
 		}).then((result) => {
 			props.userList();
@@ -13,7 +13,16 @@ function Delete(props) {
 	}
 	return (
 		<div>
-			<button onClick={() => deleteUser(props.item.id)}>Delete</button>
+			<button
+				style={{
+					color: "white",
+					backgroundColor: "red",
+					fontWeight: 400,
+					fontSize: "0.8rem",
+				}}
+				onClick={() => deleteUser(props.item.id)}>
+				Delete
+			</button>
 		</div>
 	);
 }

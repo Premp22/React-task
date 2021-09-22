@@ -10,7 +10,7 @@ function RegisterUser() {
 	}, []);
 	function userList() {
 		axios
-			.get("http://localhost:5000/users")
+			.get("https://api-task-rest.herokuapp.com/users")
 			.then((result) => {
 				setUsers(result.data);
 			})

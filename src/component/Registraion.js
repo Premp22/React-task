@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useHistory } from "react-router";
-import "../style/Adduser.css";
+import "../style/Updation.css";
 function Registration() {
 	let history = useHistory();
 	const [user, setUser] = useState({
@@ -21,7 +21,7 @@ function Registration() {
 	const postdata = async (e) => {
 		e.preventDefault();
 		const { id, firstname, lastname, email, password } = user;
-		const response = await fetch("http://localhost:5000/users", {
+		const response = await fetch("https://api-task-rest.herokuapp.com/users", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -35,10 +35,10 @@ function Registration() {
 			}),
 		});
 
-		window.alert("succesful");
+		history.push("/get");
 	};
 	return (
-		<div className="ma">
+		<div className="man">
 			<div className="box">
 				<div className="lsection">
 					<form action="">
@@ -80,7 +80,7 @@ function Registration() {
 						/>
 						<br />
 						<input
-							type="text"
+							type="password"
 							name="password"
 							value={user.name}
 							placeholder="password"

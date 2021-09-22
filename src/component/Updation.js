@@ -1,8 +1,10 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useHistory } from "react-router";
+import "../style/Adduser.css";
 function Update(props) {
-	//const[currentdata,setcurrentdata]=useState()
+	let history = useHistory();
 	const [data, setData] = useState();
 
 	const handleInputs = (e) => {
@@ -13,7 +15,7 @@ function Update(props) {
 	};
 	useEffect(async () => {
 		let result = await fetch(
-			"http://localhost:5000/users/" + props.match.params.id
+			"https://api-task-rest.herokuapp.com/users/" + props.match.params.id
 		);
 
 		result = await result.json();
@@ -22,9 +24,8 @@ function Update(props) {
 	}, []);
 
 	async function edituser(id) {
-		console.log(data);
-		const { firstname, lastname } = data;
-		const response = await fetch(`http://localhost:5000/users/${id}`, {
+		const { firstname, lastname, email, password } = data;
+		await fetch(`https://api-task-rest.herokuapp.com/users/${id}`, {
 			method: "PATCH",
 			headers: {
 				"Content-Type": "application/json",
@@ -32,14 +33,17 @@ function Update(props) {
 			body: JSON.stringify({
 				firstname,
 				lastname,
+				email,
+				password,
 			}),
 		});
+		history.push("/get");
 	}
 	if (!data) {
 		return null;
 	}
 	return (
-		<div>
+		<div className="ma">
 			<input
 				type="text"
 				name="firstname"
@@ -49,16 +53,40 @@ function Update(props) {
 				placeholder="firstname"
 				className="input"
 			/>
+			<br></br>
 			<input
 				type="text"
 				name="lastname"
 				defaultValue={data.lastname}
 				value={data.lastname}
 				onChange={handleInputs}
-				placeholder="firstname"
+				placeholder="lastname"
 				className="input"
 			/>
-			<button onClick={() => edituser(data.id)}>Update</button>
+			<br></br>
+			<input
+				type="text"
+				name="email"
+				defaultValue={data.email}
+				value={data.email}
+				onChange={handleInputs}
+				placeholder="email"
+				className="input"
+			/>
+			<br></br>
+			<input
+				type="text"
+				name="password"
+				defaultValue={data.password}
+				value={data.password}
+				onChange={handleInputs}
+				placeholder="password"
+				className="input"
+			/>
+			<br></br>
+			<button className="upt" onClick={() => edituser(data.id)}>
+				Update
+			</button>
 		</div>
 	);
 }

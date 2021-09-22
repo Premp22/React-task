@@ -1,4 +1,4 @@
-.ma {
+.man {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -44,7 +44,6 @@ h1 {
 	border-bottom: #ccc 0.125 solid;
 	padding: 0.6rem;
 
-	color: #aaaaaa;
 	margin-top: 0.625rem;
 	font-size: 1em;
 	border-radius: 0.25rem;

@@ -1,5 +1,5 @@
 import React from "react";
-import Delete from "./UnRegistration";
+import Delete from "./DeRegistration";
 import { Link } from "react-router-dom";
 
 function Users(props) {
@@ -31,7 +31,16 @@ function Users(props) {
 										</td>
 										<td>
 											<Link to={"/update/" + item.id}>
-												<button>update</button>
+												<button
+													style={{
+														color: "white",
+														backgroundColor: "green",
+														fontWeight: 400,
+														fontSize: "0.8rem",
+													}}
+													className="upb">
+													update
+												</button>
 											</Link>
 										</td>
 									</tr>
